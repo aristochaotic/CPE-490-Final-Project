@@ -8,10 +8,13 @@ import (
 
 var clients = make(map[*websocket.Conn]bool) // map of clients
 var broadcast = make(chan Message)           // channel for messaging
-var upgrader = websocket.Upgrader{}          // upgrades normal HTTP -> websocket
+var upgrader = websocket.Upgrader{           // upgrades normal HTTP -> websocket
+	CheckOrigin: func(r *http.Request) bool { return true },
+}
 
 // message object
 type Message struct {
+	Email    string "json:'email'"
 	Username string "json:'username'"
 	Message  string "json:'message'"
 }
