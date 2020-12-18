@@ -1,5 +1,5 @@
 # CPE 490 Final Project
-## Tyler Wright
+**Tyler Wright**
 
 This repo contains all the submission documents for my final project. The writeup and demo video can be found in the Documentation folder.
 
