@@ -16,6 +16,7 @@ new Vue({
 		this.ws.addEventListener('message', function(e) {
 			var msg = JSON.parse(e.data);
 			self.chatContent += '<div class="chip">' + '<img src="' + self.gravatarURL(msg.email) + '">' + msg.username + '</div>' + emojione.toImage(msg.message) + '<br/>';
+
 		var element = document.getElementById('chat-messages');
 		element.scrollTop = element.scrollHeight;
 		});
